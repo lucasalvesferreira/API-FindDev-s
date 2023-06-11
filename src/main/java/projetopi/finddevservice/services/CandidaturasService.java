@@ -51,14 +51,14 @@ public class CandidaturasService {
         );
 
         logger.info("Criando Candidatura!");
-
-        Candidatura candidaturaEntity = DozerMapper.parseObject(candidaturaRequest, Candidatura.class);
+        Candidatura candidaturaEntity = new Candidatura();
+        candidaturaEntity.setDesenvolvedor(desenvolvedor);
+        candidaturaEntity.setIdVaga(candidaturaRequest.getIdVaga());
 
         CandidaturaResponseDto candidaturaResponse = DozerMapper.parseObject(
             repository.save(candidaturaEntity),
             CandidaturaResponseDto.class
         );
-        candidaturaResponse.setDesenvolvedor(desenvolvedor);
         candidaturaResponse.add(
             linkTo(
                 methodOn(CandidaturasController.class)

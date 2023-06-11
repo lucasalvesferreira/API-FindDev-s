@@ -32,11 +32,11 @@ public class Candidatura implements Serializable {
         this.desenvolvedor = desenvolvedor;
     }
 
-    public int getIdEmpresa() {
+    public int getIdVaga() {
         return idVaga;
     }
 
-    public void setIdEmpresa(int idVaga) {
+    public void setIdVaga(int idVaga) {
         this.idVaga = idVaga;
     }
 }
