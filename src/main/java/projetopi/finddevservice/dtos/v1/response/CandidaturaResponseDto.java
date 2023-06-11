@@ -1,12 +1,14 @@
 package projetopi.finddevservice.dtos.v1.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.github.dozermapper.core.Mapping;
 import org.springframework.hateoas.RepresentationModel;
 import projetopi.finddevservice.models.DesenvolvedorModel;
 
 import java.io.Serializable;
 
+@JsonPropertyOrder({"idCandidatura","desenvolvedor","idVaga"})
 public class CandidaturaResponseDto extends RepresentationModel<CandidaturaResponseDto> implements Serializable {
 
     @Mapping("idCandidatura")
