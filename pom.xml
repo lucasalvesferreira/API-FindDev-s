@@ -128,23 +128,26 @@
             <version>${rest-assured.version}</version>
             <scope>test</scope>
         </dependency>
-        <!-- TEST-integrado-->
-        <dependency>
-            <groupId>org.testcontainers</groupId>
-            <artifactId>mysql</artifactId>
-            <version>${testcontainers.version}</version>
-            <scope>test</scope>
-        </dependency>
+<!--        &lt;!&ndash; TEST-integrado&ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.testcontainers</groupId>-->
+<!--            <artifactId>mysql</artifactId>-->
+<!--            <version>${testcontainers.version}</version>-->
+<!--            <scope>test</scope>-->
+<!--        </dependency>-->
 
-<!--        mySql-->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.32</version>
-        </dependency>
-
-
+<!--&lt;!&ndash;        mySql&ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>mysql</groupId>-->
+<!--            <artifactId>mysql-connector-java</artifactId>-->
+<!--            <version>8.0.32</version>-->
+<!--        </dependency>-->
     </dependencies>
-
+    <distributionManagement>
+        <repository>
+            <id>projetopi.finddevservice</id>
+            <url> </url>
+        </repository>
+    </distributionManagement>
 
 </project>
