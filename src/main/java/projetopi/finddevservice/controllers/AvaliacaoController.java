@@ -46,7 +46,6 @@ public class AvaliacaoController {
     public ResponseEntity<AvaliacaoResponseDto> post(@RequestBody @Valid
                                                      NovaAvaliacaoRequestDto novaAvaliacaoRequest) {
         AvaliacaoResponseDto resposta = service.post(novaAvaliacaoRequest);
-//        novaAvaliacaoRequest.isCompany() ? colocar o metodo que vai trocar a vaga para encerrada
 
         return ResponseEntity.status(201).body(resposta);
     }

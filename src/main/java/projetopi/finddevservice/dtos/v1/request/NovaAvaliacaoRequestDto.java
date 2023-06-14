@@ -13,11 +13,12 @@ public class NovaAvaliacaoRequestDto {
     @Max(5)
     private int nota;
     private String comentario;
+
+    private int idVaga;
     private boolean isCompany;
 
     public NovaAvaliacaoRequestDto() {
     }
-
 
 
     public void setIdAvaliacao(Integer idAvaliacao) {
@@ -62,5 +63,13 @@ public class NovaAvaliacaoRequestDto {
 
     public void setCompany(boolean iscompany) {
         isCompany = iscompany;
+    }
+
+    public int getIdVaga() {
+        return idVaga;
+    }
+
+    public void setIdVaga(int idVaga) {
+        this.idVaga = idVaga;
     }
 }
