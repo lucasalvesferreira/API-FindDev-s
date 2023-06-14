@@ -8,7 +8,9 @@ import projetopi.finddevservice.models.DesenvolvedorModel;
 
 import java.io.Serializable;
 
-@JsonPropertyOrder({"idCandidatura","desenvolvedor","idVaga"})
+@JsonPropertyOrder(
+        {"idCandidatura","desenvolvedor","idVaga"}
+)
 public class CandidaturaResponseDto extends RepresentationModel<CandidaturaResponseDto> implements Serializable {
 
     @Mapping("idCandidatura")
