@@ -40,7 +40,7 @@ public class CandidaturasService {
         int idVaga = candidaturaRequest.getIdVaga();
         UUID idDesenvolvedor = candidaturaRequest.getIdDesenvolvedor();
 
-        logger.info("Buscando vaga com id " + idVaga);
+        logger.info("Buscando vaga com id : " + idVaga);
         Vaga vaga = vagasRepository.findById(idVaga).orElseThrow(
             () -> new ResourceNotFoundException("Nenhuma vaga com id " + idVaga + " encontrada!")
         );
