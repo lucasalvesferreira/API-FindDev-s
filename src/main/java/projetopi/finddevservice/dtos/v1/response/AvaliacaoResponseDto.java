@@ -18,7 +18,6 @@ public class AvaliacaoResponseDto {
     private UUID idAvaliado;
     private Integer nota;
     private String comentario;
-    private boolean isCompany;
     private LocalDateTime dataHoraAvaliacao;
 
     public AvaliacaoResponseDto() {
@@ -64,13 +63,6 @@ public class AvaliacaoResponseDto {
         this.comentario = comentario;
     }
 
-    public boolean isCompany() {
-        return isCompany;
-    }
-
-    public void setCompany(boolean company) {
-        isCompany = company;
-    }
 
     public LocalDateTime getDataHoraAvaliacao() {
         return dataHoraAvaliacao;

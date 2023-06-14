@@ -43,11 +43,11 @@ public class AvaliacaoService {
             throw new ResourceNotFoundException("Avaliador not Found!");
 
         if(avaliacao.isCompany()){
-        logger.info("Buscando vaga com id " + avaliacao.getIdVaga());
-        Vaga vaga = vagasRepository.findById(avaliacao.getIdVaga()).orElseThrow(
-                () -> new ResourceNotFoundException("Nenhuma vaga com id " + avaliacao.getIdVaga() + " encontrada!"));
-            vaga.setEncerrado(true);
-            vagasRepository.save(vaga);
+            logger.info("Buscando vaga com id " + avaliacao.getIdVaga());
+            Vaga vaga = vagasRepository.findById(avaliacao.getIdVaga()).orElseThrow(
+                    () -> new ResourceNotFoundException("Nenhuma vaga com id " + avaliacao.getIdVaga() + " encontrada!"));
+                vaga.setEncerrado(true);
+                vagasRepository.save(vaga);
         }
 
 
