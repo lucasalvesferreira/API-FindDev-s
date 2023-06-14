@@ -9,8 +9,10 @@ import projetopi.finddevservice.exceptions.ResourceNotFoundException;
 import projetopi.finddevservice.mapper.DozerMapper;
 import projetopi.finddevservice.models.AvaliacaoModel;
 import projetopi.finddevservice.models.UsuarioModel;
+import projetopi.finddevservice.models.Vaga;
 import projetopi.finddevservice.repositories.AvaliacaoRepository;
 import projetopi.finddevservice.repositories.UsuarioRepository;
+import projetopi.finddevservice.repositories.VagasRepository;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -28,6 +30,9 @@ public class AvaliacaoService {
     AvaliacaoRepository avaliacaoRepository;
     @Autowired
     UsuarioRepository userRepository;
+    @Autowired
+    VagasRepository vagasRepository;
+
     private final Logger logger = Logger.getLogger(DesenvolvedorService.class.getName());
 
     public AvaliacaoResponseDto post(NovaAvaliacaoRequestDto avaliacao) {
@@ -36,6 +41,15 @@ public class AvaliacaoService {
             throw new ResourceNotFoundException("Avaliado not Found!");
         if (!userRepository.existsById(avaliacao.getIdAvaliador()))
             throw new ResourceNotFoundException("Avaliador not Found!");
+
+        if(avaliacao.isCompany()){
+        logger.info("Buscando vaga com id " + avaliacao.getIdVaga());
+        Vaga vaga = vagasRepository.findById(avaliacao.getIdVaga()).orElseThrow(
+                () -> new ResourceNotFoundException("Nenhuma vaga com id " + avaliacao.getIdVaga() + " encontrada!"));
+            vaga.setEncerrado(true);
+            vagasRepository.save(vaga);
+        }
+
 
         logger.info("creating assessment!");
 

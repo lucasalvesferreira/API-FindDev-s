@@ -53,7 +53,7 @@ public class CandidaturasService {
         logger.info("Criando Candidatura!");
         Candidatura candidaturaEntity = new Candidatura();
         candidaturaEntity.setDesenvolvedor(desenvolvedor);
-        candidaturaEntity.setIdVaga(vaga.getId());
+        candidaturaEntity.setIdVaga(candidaturaRequest.getIdVaga());
 
         CandidaturaResponseDto candidaturaResponse = DozerMapper.parseObject(
             repository.save(candidaturaEntity),

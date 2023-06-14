@@ -45,3 +45,4 @@ public class CandidaturaResponseDto extends RepresentationModel<CandidaturaRespo
         this.idVaga = idVaga;
     }
 }
+
